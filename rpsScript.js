@@ -25,6 +25,18 @@ function playRound(playerSelection, computerSelection) {
         return "You lose! Paper loses to scissors.";
     }
 
+    // Tie case
+    if (playerSelection == "rock" && computerSelection == "rock") {
+        return "Tie!";
+    }
+
+    if (playerSelection == "paper" && computerSelection == "paper") {
+        return "Tie!";
+    }
+
+    if (playerSelection == "scissors" && computerSelection == "scissors") {
+        return "Tie!";
+    }
 }
 
 const playerSelection = (prompt("Make your choice").toLowerCase())
