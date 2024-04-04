@@ -1,4 +1,5 @@
-for (let i =0; i < 5; i++) {
+// Loop 5 times
+for (let i = 0; i < 5; i++) {
 
 function playRound(playerSelection, computerSelection) {
     // Player Case
