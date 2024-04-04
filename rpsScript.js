@@ -39,6 +39,21 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = (prompt("Make your choice").toLowerCase())
-const computerSelection = "scissors";
-console.log( (playRound(playerSelection, computerSelection)));
+// Randomly select integer to convert what computer will choose
+function opponent() {
+    const num = (Math.floor(Math.random() * 12))
+
+    if (num <=3) {
+        return 'rock';
+    } else if (num <=7) {
+        return 'paper';
+    } else {
+        return 'scissors';
+    }
+}
+
+const playerSelection = (prompt("Make your choice").toLowerCase());
+const computerSelection = opponent().toLowerCase();
+console.log(playerSelection);
+console.log(computerSelection);
+console.log(playRound(playerSelection, computerSelection));
