@@ -1,3 +1,5 @@
+for (let i =0; i < 5; i++) {
+
 function playRound(playerSelection, computerSelection) {
     // Player Case
     if (playerSelection == "rock" && computerSelection == "scissors") {
@@ -52,8 +54,13 @@ function opponent() {
     }
 }
 
+// User Prompt
 const playerSelection = (prompt("Make your choice").toLowerCase());
 const computerSelection = opponent().toLowerCase();
-console.log(playerSelection);
-console.log(computerSelection);
+
+// Round display and game call function
+console.log('Round ' + (i + 1));
+console.log('Player chooses ' + playerSelection);
+console.log('Opponent chooses ' + computerSelection);
 console.log(playRound(playerSelection, computerSelection));
+}
