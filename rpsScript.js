@@ -1,5 +1,37 @@
-// Loop 5 times
-for (let i = 0; i < 5; i++) {
+/* // User Prompt
+const playerSelection = (prompt("Make your choice").toLowerCase());
+const computerSelection = opponent().toLowerCase(); */
+
+// Global variables
+let playerSelect;
+let compSelect;
+
+// Reference to buttons in HTML
+const btn1 = document.querySelector("#btn1");
+const btn2 = document.querySelector("#btn2");
+const btn3 = document.querySelector("#btn3");
+
+// Buttons
+btn1.addEventListener("click", () => {
+    playerSelect = "rock";
+    alert("You've selected rock");
+    compSelect = "scissors"
+
+    playRound(playerSelect, compSelect);
+})
+
+btn2.addEventListener("click", () => {
+    playerSelect = "paper";
+    alert("You've selected paper");
+
+})
+
+btn3.addEventListener("click", () => {
+    playerSelect = "scissors";
+    alert("You've selected scissors");
+
+})
+
 
 function playRound(playerSelection, computerSelection) {
     // Player Case
@@ -55,13 +87,7 @@ function opponent() {
     }
 }
 
-// User Prompt
-const playerSelection = (prompt("Make your choice").toLowerCase());
-const computerSelection = opponent().toLowerCase();
-
 // Round display and game call function
-console.log('Round ' + (i + 1));
-console.log('Player chooses ' + playerSelection);
-console.log('Opponent chooses ' + computerSelection);
-console.log(playRound(playerSelection, computerSelection));
-}
+console.log('Player chooses ' + playerSelect);
+console.log('Opponent chooses ' + compSelect);
+console.log(playRound(playerSelect, compSelect));
