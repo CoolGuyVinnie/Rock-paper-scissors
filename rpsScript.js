@@ -17,7 +17,11 @@ btn1.addEventListener("click", () => {
     alert("You've selected rock");
     compSelect = "scissors"
 
-    playRound(playerSelect, compSelect);
+    // Round display and game call function
+    console.log('Player chooses ' + playerSelect);
+    console.log('Opponent chooses ' + compSelect);
+
+    console.log(playRound(playerSelect, compSelect));
 })
 
 btn2.addEventListener("click", () => {
@@ -33,9 +37,9 @@ btn3.addEventListener("click", () => {
 })
 
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelect, compSelect) {
     // Player Case
-    if (playerSelection == "rock" && computerSelection == "scissors") {
+    if (playerSelect == "rock" && compSelect == "scissors") {
         return "You win! Rock beats scissors.";
     }
 
@@ -72,6 +76,8 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection == "scissors" && computerSelection == "scissors") {
         return "Tie!";
     }
+
+
 }
 
 // Randomly select integer to convert what computer will choose
@@ -86,8 +92,3 @@ function opponent() {
         return 'scissors';
     }
 }
-
-// Round display and game call function
-console.log('Player chooses ' + playerSelect);
-console.log('Opponent chooses ' + compSelect);
-console.log(playRound(playerSelect, compSelect));
