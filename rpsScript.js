@@ -1,6 +1,6 @@
 /* // User Prompt
-const playerSelection = (prompt("Make your choice").toLowerCase());
-const computerSelection = opponent().toLowerCase(); */
+const playerSelect = (prompt("Make your choice").toLowerCase());
+const compSelect = opponent().toLowerCase(); */
 
 // Global variables
 let playerSelect;
@@ -14,10 +14,9 @@ const btn3 = document.querySelector("#btn3");
 // Buttons
 btn1.addEventListener("click", () => {
     playerSelect = "rock";
-    alert("You've selected rock");
-    compSelect = "scissors"
+    compSelect = opponent();
 
-    // Round display and game call function
+    // Round display and game call function (testing)
     console.log('Player chooses ' + playerSelect);
     console.log('Opponent chooses ' + compSelect);
 
@@ -26,16 +25,25 @@ btn1.addEventListener("click", () => {
 
 btn2.addEventListener("click", () => {
     playerSelect = "paper";
-    alert("You've selected paper");
+    compSelect = opponent();
 
+    // Round display and game call function (testing)
+    console.log('Player chooses ' + playerSelect);
+    console.log('Opponent chooses ' + compSelect);
+
+    console.log(playRound(playerSelect, compSelect));
 })
 
 btn3.addEventListener("click", () => {
     playerSelect = "scissors";
-    alert("You've selected scissors");
+    compSelect = opponent();
 
+    // Round display and game call function (testing)
+    console.log('Player chooses ' + playerSelect);
+    console.log('Opponent chooses ' + compSelect);
+
+    console.log(playRound(playerSelect, compSelect));
 })
-
 
 function playRound(playerSelect, compSelect) {
     // Player Case
@@ -43,42 +51,43 @@ function playRound(playerSelect, compSelect) {
         return "You win! Rock beats scissors.";
     }
 
-    if (playerSelection == "paper" && computerSelection == "rock") {
+    if (playerSelect == "paper" && compSelect == "rock") {
         return "You win! Paper beats rock.";
     }
 
-    if (playerSelection == "scissors" && computerSelection == "paper") {
+    if (playerSelect == "scissors" && compSelect == "paper") {
         return "You win! Scissors beats paper.";
     }
 
     // Computer Case
-    if (computerSelection == "rock" && playerSelection == "scissors") {
+    if (compSelect == "rock" && playerSelect == "scissors") {
         return "You lose! Scissors loses to rock.";
     }
 
-    if (computerSelection == "paper" && playerSelection == "rock") {
+    if (compSelect == "paper" && playerSelect == "rock") {
         return "You lose! Rock loses to paper.";
     }
 
-    if (computerSelection == "scissors" && playerSelection == "paper") {
+    if (compSelect == "scissors" && playerSelect == "paper") {
         return "You lose! Paper loses to scissors.";
     }
 
     // Tie case
-    if (playerSelection == "rock" && computerSelection == "rock") {
+    if (playerSelect == "rock" && compSelect == "rock") {
         return "Tie!";
     }
 
-    if (playerSelection == "paper" && computerSelection == "paper") {
+    if (playerSelect == "paper" && compSelect == "paper") {
         return "Tie!";
     }
 
-    if (playerSelection == "scissors" && computerSelection == "scissors") {
+    if (playerSelect == "scissors" && compSelect == "scissors") {
         return "Tie!";
     }
 
 
 }
+
 
 // Randomly select integer to convert what computer will choose
 function opponent() {
