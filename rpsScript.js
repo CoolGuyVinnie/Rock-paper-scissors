@@ -1,7 +1,3 @@
-/* // User Prompt
-const playerSelect = (prompt("Make your choice").toLowerCase());
-const compSelect = opponent().toLowerCase(); */
-
 // Global variables
 let playerSelect;
 let compSelect;
@@ -16,33 +12,48 @@ btn1.addEventListener("click", () => {
     playerSelect = "rock";
     compSelect = opponent();
 
-    // Round display and game call function (testing)
-    console.log('Player chooses ' + playerSelect);
-    console.log('Opponent chooses ' + compSelect);
+    const results1 = document.createElement("div");
+    const results2 = document.createElement("div");
+    const results3 = document.createElement("div");
+    results1.textContent = "Player chooses " + playerSelect + "."
+    results2.textContent = "Opponent chooses " + compSelect + "."
+    results3.textContent = playRound(playerSelect, compSelect);
+    document.body.append(results1);
+    document.body.append(results2);
+    document.body.append(results3);
 
-    console.log(playRound(playerSelect, compSelect));
 })
 
 btn2.addEventListener("click", () => {
     playerSelect = "paper";
     compSelect = opponent();
 
-    // Round display and game call function (testing)
-    console.log('Player chooses ' + playerSelect);
-    console.log('Opponent chooses ' + compSelect);
+    const results1 = document.createElement("div");
+    const results2 = document.createElement("div");
+    const results3 = document.createElement("div");
+    results1.textContent = "Player chooses " + playerSelect + "."
+    results2.textContent = "Opponent chooses " + compSelect + "."
+    results3.textContent = playRound(playerSelect, compSelect);
+    document.body.append(results1);
+    document.body.append(results2);
+    document.body.append(results3);
 
-    console.log(playRound(playerSelect, compSelect));
 })
 
 btn3.addEventListener("click", () => {
     playerSelect = "scissors";
     compSelect = opponent();
 
-    // Round display and game call function (testing)
-    console.log('Player chooses ' + playerSelect);
-    console.log('Opponent chooses ' + compSelect);
-
-    console.log(playRound(playerSelect, compSelect));
+    const results1 = document.createElement("div");
+    const results2 = document.createElement("div");
+    const results3 = document.createElement("div");
+    results1.textContent = "Player chooses " + playerSelect + "."
+    results2.textContent = "Opponent chooses " + compSelect + "."
+    results3.textContent = playRound(playerSelect, compSelect);
+    document.body.append(results1);
+    document.body.append(results2);
+    document.body.append(results3);
+    
 })
 
 function playRound(playerSelect, compSelect) {
