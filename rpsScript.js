@@ -1,6 +1,7 @@
 // Global variables
 let playerSelect;
 let compSelect;
+let i = 1;
 
 // Reference to buttons in HTML
 const btn1 = document.querySelector("#btn1");
@@ -9,51 +10,64 @@ const btn3 = document.querySelector("#btn3");
 
 // Buttons
 btn1.addEventListener("click", () => {
+
     playerSelect = "rock";
     compSelect = opponent();
 
+    const results0 = document.createElement("div");
     const results1 = document.createElement("div");
     const results2 = document.createElement("div");
     const results3 = document.createElement("div");
+    results0.textContent = "Round " + i;
     results1.textContent = "Player chooses " + playerSelect + "."
     results2.textContent = "Opponent chooses " + compSelect + "."
     results3.textContent = playRound(playerSelect, compSelect);
+    document.body.append(results0);
     document.body.append(results1);
     document.body.append(results2);
     document.body.append(results3);
 
+    i++;
 })
 
 btn2.addEventListener("click", () => {
     playerSelect = "paper";
     compSelect = opponent();
 
+    const results0 = document.createElement("div");
     const results1 = document.createElement("div");
     const results2 = document.createElement("div");
     const results3 = document.createElement("div");
+    results0.textContent = "Round " + i;
     results1.textContent = "Player chooses " + playerSelect + "."
     results2.textContent = "Opponent chooses " + compSelect + "."
     results3.textContent = playRound(playerSelect, compSelect);
+    document.body.append(results0);
     document.body.append(results1);
     document.body.append(results2);
     document.body.append(results3);
 
+    i++;
 })
 
 btn3.addEventListener("click", () => {
     playerSelect = "scissors";
     compSelect = opponent();
 
+    const results0 = document.createElement("div");
     const results1 = document.createElement("div");
     const results2 = document.createElement("div");
     const results3 = document.createElement("div");
+    results0.textContent = "Round " + i;
     results1.textContent = "Player chooses " + playerSelect + "."
     results2.textContent = "Opponent chooses " + compSelect + "."
     results3.textContent = playRound(playerSelect, compSelect);
+    document.body.append(results0);
     document.body.append(results1);
     document.body.append(results2);
     document.body.append(results3);
-    
+
+    i++;
 })
 
 function playRound(playerSelect, compSelect) {
