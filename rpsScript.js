@@ -2,6 +2,8 @@
 let playerSelect;
 let compSelect;
 let i = 1;
+let playerScore = 1;
+let compScore = 1;
 
 // Reference to buttons in HTML
 const btn1 = document.querySelector("#btn1");
@@ -13,6 +15,12 @@ btn1.addEventListener("click", () => {
 
     playerSelect = "rock";
     compSelect = opponent();
+
+    if (compSelect == 'scissors') {
+        playerScore++;
+    } else if (compSelect == 'paper') {
+        compScore++;
+    }
 
     const results0 = document.createElement("div");
     const results1 = document.createElement("div");
