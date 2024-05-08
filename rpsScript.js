@@ -2,8 +2,8 @@
 let playerSelect;
 let compSelect;
 let i = 1;
-let playerScore = 1;
-let compScore = 1;
+let playerScore = 0;
+let compScore = 0;
 
 // Reference to buttons in HTML
 const btn1 = document.querySelector("#btn1");
@@ -18,15 +18,15 @@ btn1.addEventListener("click", () => {
 
     if (compSelect == 'scissors') {
         playerScore++;
-    } else if (compSelect == 'paper') {
-        compScore++;
-    }
+       } else if (compSelect == 'paper') {
+           compScore++;
+       }
 
     const results0 = document.createElement("div");
     const results1 = document.createElement("div");
     const results2 = document.createElement("div");
     const results3 = document.createElement("div");
-    results0.textContent = "Round " + i;
+    results0.textContent = "Player Score: " + playerScore + " " + "Opponent Score: " + compScore;
     results1.textContent = "Player chooses " + playerSelect + "."
     results2.textContent = "Opponent chooses " + compSelect + "."
     results3.textContent = playRound(playerSelect, compSelect);
@@ -34,6 +34,8 @@ btn1.addEventListener("click", () => {
     document.body.append(results1);
     document.body.append(results2);
     document.body.append(results3);
+
+    winner(playerScore, compScore);
 
     i++;
 })
@@ -42,11 +44,17 @@ btn2.addEventListener("click", () => {
     playerSelect = "paper";
     compSelect = opponent();
 
+    if (compSelect == 'rock') {
+        playerScore++;
+       } else if (compSelect == 'scissors') {
+           compScore++;
+       }
+
     const results0 = document.createElement("div");
     const results1 = document.createElement("div");
     const results2 = document.createElement("div");
     const results3 = document.createElement("div");
-    results0.textContent = "Round " + i;
+    results0.textContent = "Player Score: " + playerScore + " " + "Opponent Score: " + compScore;
     results1.textContent = "Player chooses " + playerSelect + "."
     results2.textContent = "Opponent chooses " + compSelect + "."
     results3.textContent = playRound(playerSelect, compSelect);
@@ -54,6 +62,8 @@ btn2.addEventListener("click", () => {
     document.body.append(results1);
     document.body.append(results2);
     document.body.append(results3);
+
+    winner(playerScore, compScore);
 
     i++;
 })
@@ -62,11 +72,17 @@ btn3.addEventListener("click", () => {
     playerSelect = "scissors";
     compSelect = opponent();
 
+    if (compSelect == 'paper') {
+        playerScore++;
+       } else if (compSelect == 'rock') {
+           compScore++;
+       }
+
     const results0 = document.createElement("div");
     const results1 = document.createElement("div");
     const results2 = document.createElement("div");
     const results3 = document.createElement("div");
-    results0.textContent = "Round " + i;
+    results0.textContent = "Player Score: " + playerScore + " " + "Opponent Score: " + compScore;
     results1.textContent = "Player chooses " + playerSelect + "."
     results2.textContent = "Opponent chooses " + compSelect + "."
     results3.textContent = playRound(playerSelect, compSelect);
@@ -74,6 +90,8 @@ btn3.addEventListener("click", () => {
     document.body.append(results1);
     document.body.append(results2);
     document.body.append(results3);
+
+    winner(playerScore, compScore);
 
     i++;
 })
@@ -132,5 +150,17 @@ function opponent() {
         return 'paper';
     } else {
         return 'scissors';
+    }
+}
+
+function winner(player, opponent) {
+    if (player == 5) {
+        const announcement = document.createElement("div");
+        announcement.textContent = "PLAYER HAS WON 5 ROUNDS";
+        document.body.append(announcement);
+    } else if (opponent == 5) {
+        const announcement = document.createElement("div");
+        announcement.textContent = "COMPUTER HAS WON 5 ROUNDS";
+        document.body.append(announcement);
     }
 }
